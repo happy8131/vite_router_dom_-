@@ -1,5 +1,5 @@
 import React from "react";
-import { Outlet } from "react-router-dom";
+import GlobalLayout from "./pages/_layout";
 
 const DynamicIndex = React.lazy(() => import("./pages/index"));
 const DynamicProductsIndex = React.lazy(() => import("./pages/products/index"));
@@ -8,7 +8,7 @@ const DynamicProductsId = React.lazy(() => import("./pages/products/[id]"));
 export const routes = [
   {
     path: "/",
-    element: <Outlet />,
+    element: <GlobalLayout />,
     children: [
       { path: "/", element: <DynamicIndex />, index: true },
       { path: "/products", element: <DynamicProductsIndex />, index: true },
